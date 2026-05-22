@@ -79,10 +79,10 @@ const CommandCenterData = {
             name: "NorCal Operations",
             role: "Business Operations",
             avatar: "NC",
-            status: "active",
-            description: "Manages NorCal Carb Mobile operations, orders, and logistics",
+            status: "busy",
+            description: "Manages NorCal Carb Mobile operations, orders, and logistics. Active: Hayward/SL cold call outreach (22 leads)",
             tier: "business",
-            tasksCompleted: 78,
+            tasksCompleted: 79,
             efficiency: 91
         },
         {
@@ -231,6 +231,39 @@ const CommandCenterData = {
             priority: "high",
             dueDate: "This Week",
             progress: 10
+        },
+        {
+            id: "task-012",
+            title: "Hayward/San Leandro Cold Call Outreach — 22 Leads",
+            description: "SMS at 10:30 AM tomorrow (5/23), then email follow-up. 7 HOT, 15 WARM leads. Track in Gumption cold calls. Dedupe against Master CRM before calling. Brief: briefs/hayward-leads-outreach-2026-05-22.json",
+            agent: "norcal-ops",
+            agentName: "NorCal Operations",
+            status: "active",
+            priority: "high",
+            dueDate: "Tomorrow, 10:30 AM",
+            progress: 30
+        },
+        {
+            id: "task-013",
+            title: "Add Hayward/SL Leads to Gumption Cold Calls",
+            description: "Upload 22 leads to gumption.manus.space under Cold Calls for tracking. CSV: leads/hayward-san-leandro-2026-05-22.csv",
+            agent: "client-agent",
+            agentName: "Client Relations",
+            status: "pending",
+            priority: "high",
+            dueDate: "Today",
+            progress: 0
+        },
+        {
+            id: "task-014",
+            title: "Dedupe Hayward Leads Against Master CRM",
+            description: "Cross-reference 22 new leads against Master CRM sheet (1TdNnf7eLaPNN3anaBGpNdjo_unK04zWwZJ859ZDvIO4) to identify existing customers before outreach.",
+            agent: "client-agent",
+            agentName: "Client Relations",
+            status: "pending",
+            priority: "critical",
+            dueDate: "Today, Before SMS",
+            progress: 0
         }
     ],
 
@@ -429,18 +462,39 @@ const CommandCenterData = {
     // Activity Feed
     activities: [
         {
+            id: "act-012",
+            type: "task_complete",
+            icon: "check",
+            text: "<strong>NorCal Operations</strong> prepared 22 cold call leads (Hayward/San Leandro) — SMS drafts ready, scheduled for 10:30 AM tomorrow",
+            time: "Just now"
+        },
+        {
+            id: "act-011",
+            type: "alert",
+            icon: "alert",
+            text: "<strong>Client Relations</strong> WARNING: Hayward leads NOT deduped against Master CRM — verify before calling",
+            time: "Just now"
+        },
+        {
+            id: "act-010",
+            type: "email",
+            icon: "mail",
+            text: "<strong>Email Agent</strong> drafted personalized SMS &amp; email for 7 HOT + 15 WARM leads — tap-to-call HTML ready",
+            time: "1 min ago"
+        },
+        {
             id: "act-001",
             type: "task_complete",
             icon: "check",
             text: "<strong>Calendar Agent</strong> completed daily schedule optimization",
-            time: "2 min ago"
+            time: "5 min ago"
         },
         {
             id: "act-000",
             type: "email",
             icon: "mail",
             text: "<strong>Email Agent</strong> prepared CARB Testing email draft — action required: fill contacts &amp; send via Squarespace",
-            time: "Just now"
+            time: "10 min ago"
         },
         {
             id: "act-002",

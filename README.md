@@ -42,3 +42,18 @@ A multiple-choice quick question brief located at [`briefs/brian-calendar-quick-
 #### How It Works
 
 The brief is structured as a JSON questionnaire with five questions that guide Brian through calendar planning. After the questions, the `agentTaskStatuses` section provides a dashboard view of all agent tasks and their current statuses, giving Brian full visibility into what each agent is working on.
+
+### Hayward/San Leandro Cold Call Outreach (2026-05-22)
+
+Active outreach campaign for 22 diesel fleet leads in the Hayward/San Leandro area. Files:
+
+- **[`briefs/hayward-leads-outreach-2026-05-22.json`](briefs/hayward-leads-outreach-2026-05-22.json)** — Full outreach brief with personalized SMS and email drafts for all 22 leads (7 HOT, 15 WARM), voicemail script, and Gumption tracking notes.
+- **[`leads/hayward-san-leandro-2026-05-22.csv`](leads/hayward-san-leandro-2026-05-22.csv)** — CSV for import into Master CRM (`Leads_2026-05-14` tab) and Gumption cold call tracker. Includes score, tier, status, and tracking columns.
+- **[`leads/hayward-san-leandro-tap-to-call.html`](leads/hayward-san-leandro-tap-to-call.html)** — Mobile-friendly HTML page. Open on your phone to tap any number to call or SMS. Pre-loaded SMS drafts, voicemail script toggle, and call counter.
+
+#### Workflow
+
+1. **Dedupe first** — Cross-reference against Master CRM sheet before contacting.
+2. **SMS at 10:30 AM (5/23)** — Send personalized SMS using the tap-to-call page or drafts in the brief.
+3. **Email follow-up** — Send personalized emails from `bryan@norcalcarbmobile.com`.
+4. **Track in Gumption** — Add all leads to [gumption.manus.space](https://gumption.manus.space) under Cold Calls.
