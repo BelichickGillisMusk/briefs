@@ -42,3 +42,13 @@ A multiple-choice quick question brief located at [`briefs/brian-calendar-quick-
 #### How It Works
 
 The brief is structured as a JSON questionnaire with five questions that guide Brian through calendar planning. After the questions, the `agentTaskStatuses` section provides a dashboard view of all agent tasks and their current statuses, giving Brian full visibility into what each agent is working on.
+
+### Hayward Clean Truck Check Outreach
+
+The Hayward-area cold-call package is located in:
+
+- [`briefs/hayward-clean-truck-check-outreach-2026-05-22.json`](briefs/hayward-clean-truck-check-outreach-2026-05-22.json) - SMS, email, voicemail, compliance, and manual workflow brief.
+- [`briefs/hayward-clean-truck-check-cold-calls-2026-05-22.csv`](briefs/hayward-clean-truck-check-cold-calls-2026-05-22.csv) - Master CRM / Gumption Cold Calls import rows for the 22 provided hot and warm leads.
+- [`briefs/hayward-clean-truck-check-call-sheet-2026-05-22.html`](briefs/hayward-clean-truck-check-call-sheet-2026-05-22.html) - mobile click-to-call sheet.
+
+Before outreach, dedupe every row against the Master CRM sheet and confirm the lead is not already a customer or do-not-contact record. SMS and email content is draft-only until Bryan reviews compliance requirements and schedules/sends from an authenticated account.

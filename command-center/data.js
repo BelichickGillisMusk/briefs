@@ -231,6 +231,17 @@ const CommandCenterData = {
             priority: "high",
             dueDate: "This Week",
             progress: 10
+        },
+        {
+            id: "task-012",
+            title: "Hayward Clean Truck Check Outreach - Dedupe, Call, Import",
+            description: "Verify 22 Hayward-area leads against Master CRM, call hot leads first, then import the prepared CSV into Master CRM and Gumption Cold Calls. Draft brief: briefs/hayward-clean-truck-check-outreach-2026-05-22.json",
+            agent: "client-agent",
+            agentName: "Client Relations",
+            status: "pending",
+            priority: "high",
+            dueDate: "Tomorrow, 10:30 AM",
+            progress: 35
         }
     ],
 
@@ -308,6 +319,17 @@ const CommandCenterData = {
             email: "[YOUR_BUSINESS_EMAIL@norcalcarbmobile.com]",
             subject: "📧 DRAFT: CARB Testing Outreach — Fill Emails & Send via Squarespace",
             preview: "Draft ready: 'Is Your Carburetor CARB-Compliant? We Come to You.' — Fill in recipient emails from Notion DB, then load into Squarespace Email Campaigns. See briefs/carb-testing-email-draft.json for full draft + instructions.",
+            time: "Just now",
+            unread: true,
+            priority: "high",
+            category: "action-required"
+        },
+        {
+            id: "mail-008",
+            from: "Bryan (Outreach Draft - Action Required)",
+            email: "bryan@norcalcarbmobile.com",
+            subject: "DRAFT: Hayward Clean Truck Check SMS/Email + Cold Call Import",
+            preview: "22 provided hot/warm leads are ready as draft-only assets. Dedupe against Master CRM before calling, manually unlock Gumption to import Cold Calls CSV, and only schedule SMS after consent/DNC checks.",
             time: "Just now",
             unread: true,
             priority: "high",
@@ -440,6 +462,13 @@ const CommandCenterData = {
             type: "email",
             icon: "mail",
             text: "<strong>Email Agent</strong> prepared CARB Testing email draft — action required: fill contacts &amp; send via Squarespace",
+            time: "Just now"
+        },
+        {
+            id: "act-hayward-cold-calls",
+            type: "agent",
+            icon: "user",
+            text: "<strong>Client Relations</strong> prepared Hayward Clean Truck Check call sheet, SMS/email drafts, and Gumption Cold Calls import CSV",
             time: "Just now"
         },
         {

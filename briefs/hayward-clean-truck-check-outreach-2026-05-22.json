@@ -1,0 +1,397 @@
+{
+  "brief": {
+    "id": "hayward-clean-truck-check-outreach-2026-05-22",
+    "title": "Hayward Clean Truck Check Outreach - SMS, Email, and Cold Call Tracking",
+    "description": "Human-in-the-loop outreach package for Hayward-area heavy-duty diesel prospects. Includes SMS and email drafts, call priority, CRM/Gumption import guidance, and compliance/dedupe gates.",
+    "type": "outreach-draft",
+    "recipient": "Bryan",
+    "version": "1.0.0",
+    "status": "draft",
+    "business": "NorCal CARB Mobile",
+    "ownerEmail": "bryan@norcalcarbmobile.com",
+    "lastUpdated": "2026-05-22"
+  },
+  "campaign": {
+    "name": "Hayward Clean Truck Check - May 2026",
+    "service": "Clean Truck Check mobile OBD and OVI smoke opacity testing",
+    "targetAudience": "Tree service, concrete, trucking, freight, paving, towing, drilling, waste, and other fleets likely to operate diesel vehicles over 14,000 lbs GVWR.",
+    "declaredLeadBreakdown": {
+      "hot": 7,
+      "warm": 24,
+      "cool": 8,
+      "declaredTotal": 39
+    },
+    "providedLeadRecords": 22,
+    "missingLeadDetails": "The prompt included the top 7 hot leads and top 15 warm leads only. Add the remaining 9 warm leads and 8 cool leads before a full 39-lead import.",
+    "requestedSmsSendTimeLocal": "2026-05-23 10:30 America/Los_Angeles",
+    "externalActionsPerformed": {
+      "gmailDraftsCreated": false,
+      "smsScheduledOrSent": false,
+      "gumptionUpdated": false
+    },
+    "externalActionReason": "This workspace has no authenticated Gmail, SMS/Twilio, or Gumption/Manus write integration. gumption.manus.space is passcode protected. Assets are prepared for manual review/import."
+  },
+  "requiredBeforeOutreach": [
+    {
+      "step": 1,
+      "action": "Deduplicate against Master CRM",
+      "detail": "Verify each lead in Google Sheet Master CRM 1TdNnf7eLaPNN3anaBGpNdjo_unK04zWwZJ859ZDvIO4 before calling or messaging. Some may already be customers."
+    },
+    {
+      "step": 2,
+      "action": "Confirm SMS consent and DNC status",
+      "detail": "Do not send marketing SMS to leads without the required consent and opt-out handling. Keep STOP opt-out text in any SMS."
+    },
+    {
+      "step": 3,
+      "action": "Confirm email compliance details",
+      "detail": "Add the business physical mailing address and unsubscribe mechanism before sending cold marketing email."
+    },
+    {
+      "step": 4,
+      "action": "Import tracking records",
+      "detail": "Upload briefs/hayward-clean-truck-check-cold-calls-2026-05-22.csv to the Master CRM Leads_2026-05-14 tab and to gumption.manus.space Cold Calls after unlocking the site."
+    }
+  ],
+  "drafts": {
+    "sms": {
+      "status": "draft_only",
+      "recommendedTiming": "After dedupe and consent check, schedule no earlier than 2026-05-23 10:30 America/Los_Angeles.",
+      "template": "Hi {{business_name}}, Bryan w/ NorCal CARB Mobile. In {{city}} tomorrow for Clean Truck Checks. Diesels 14k+ GVWR? I can do mobile OBD + OVI same trip. Want a slot? Reply STOP to opt out",
+      "hotVariant": "Hi {{business_name}}, Bryan w/ NorCal CARB Mobile. I will be near {{city}} tomorrow doing Clean Truck Checks. If you run diesels 14k+ GVWR, I can do mobile OBD + OVI same trip. Want me to stop by? Reply STOP to opt out",
+      "warmVariant": "Hi {{business_name}}, Bryan w/ NorCal CARB Mobile. We do mobile Clean Truck Checks for 14k+ GVWR diesels: OBD + OVI smoke opacity. Want a quick quote? Reply STOP to opt out"
+    },
+    "email": {
+      "status": "draft_only",
+      "from": {
+        "name": "Bryan - NorCal CARB Mobile",
+        "email": "bryan@norcalcarbmobile.com"
+      },
+      "replyTo": "bryan@norcalcarbmobile.com",
+      "subjectLine": "Clean Truck Check near {{city}} tomorrow",
+      "previewText": "Mobile OBD and OVI smoke opacity testing for 14k+ GVWR diesels.",
+      "bodyPlainText": "Hi {{contact_name}},\n\nBryan with NorCal CARB Mobile. I will be in {{city}} tomorrow doing Clean Truck Checks for fleets nearby.\n\nIf you have diesel trucks over 14,000 lbs GVWR, I can knock out mobile OBD testing and OVI smoke opacity checks on the same trip. We are mobile, available 24/7, and set up for fleet yards, shops, and job sites.\n\nIf this is useful, reply with the best person to coordinate with or call/text me at {{bryan_phone}} and I will see if I can fit you into the route.\n\nThanks,\nBryan\nNorCal CARB Mobile\n{{bryan_phone}}\nhttps://norcalcarbmobile.com\n{{physical_mailing_address}}\n\nTo stop receiving emails from us, reply with Unsubscribe.",
+      "bodyHTML": "<p>Hi {{contact_name}},</p>\n\n<p>Bryan with NorCal CARB Mobile. I will be in {{city}} tomorrow doing <strong>Clean Truck Checks</strong> for fleets nearby.</p>\n\n<p>If you have diesel trucks over <strong>14,000 lbs GVWR</strong>, I can knock out mobile OBD testing and OVI smoke opacity checks on the same trip. We are mobile, available 24/7, and set up for fleet yards, shops, and job sites.</p>\n\n<p>If this is useful, reply with the best person to coordinate with or call/text me at {{bryan_phone}} and I will see if I can fit you into the route.</p>\n\n<p>Thanks,<br><strong>Bryan</strong><br>NorCal CARB Mobile<br>{{bryan_phone}}<br><a href=\"https://norcalcarbmobile.com\">norcalcarbmobile.com</a><br>{{physical_mailing_address}}</p>\n\n<p style=\"font-size: 12px; color: #666;\">To stop receiving emails from us, reply with Unsubscribe.</p>"
+    },
+    "voicemail": {
+      "template": "Hey {{business_name}}, Bryan with NorCal CARB Mobile. I will be in {{city}} tomorrow doing Clean Truck Checks for fleets right by you. If you have diesels over 14,000 lbs I can knock yours out same trip - mobile OBD and OVI smoke opacity, 24/7, 363 days a year. Call me before the State calls you. {{bryan_phone}}."
+    }
+  },
+  "manualWorkflow": [
+    "Open briefs/hayward-clean-truck-check-call-sheet-2026-05-22.html on a phone and tap numbers to call hot leads first.",
+    "Use briefs/hayward-clean-truck-check-cold-calls-2026-05-22.csv for Master CRM Leads_2026-05-14 import and Gumption Cold Calls tracking.",
+    "After dedupe, mark dedupe_status as clear, customer, duplicate, or do_not_contact.",
+    "Only schedule SMS for leads with consent/approved outreach status. Requested send time is 2026-05-23 10:30 America/Los_Angeles.",
+    "For emails, find/verify recipient email addresses first, add physical mailing address/unsubscribe handling, then create drafts from bryan@norcalcarbmobile.com."
+  ],
+  "leads": [
+    {
+      "leadId": "ncm-hayward-001",
+      "score": 85,
+      "temperature": "HOT",
+      "businessName": "ArborTech Inc.",
+      "phone": "510-871-8788",
+      "category": "Tree Service",
+      "city": "Hayward",
+      "address": "1310 Ruus Ln, Hayward 94544",
+      "reviews": 135,
+      "rating": 5.0,
+      "open24_7": true,
+      "callOrder": 1
+    },
+    {
+      "leadId": "ncm-hayward-002",
+      "score": 80,
+      "temperature": "HOT",
+      "businessName": "Saunders Tree Service Inc",
+      "phone": "925-200-9057",
+      "category": "Tree Service",
+      "city": "Hayward",
+      "address": "22844 Alice St, Hayward 94541",
+      "reviews": 78,
+      "rating": 4.9,
+      "open24_7": true,
+      "callOrder": 2
+    },
+    {
+      "leadId": "ncm-hayward-003",
+      "score": 80,
+      "temperature": "HOT",
+      "businessName": "Castillo Tree Service Inc",
+      "phone": "510-792-6590",
+      "category": "Tree Service",
+      "city": "Hayward",
+      "address": "25798 Franklin Ave, Hayward 94544",
+      "reviews": 51,
+      "rating": 4.8,
+      "open24_7": true,
+      "callOrder": 3
+    },
+    {
+      "leadId": "ncm-hayward-004",
+      "score": 80,
+      "temperature": "HOT",
+      "businessName": "Graham Tree Services Inc",
+      "phone": "510-383-9585",
+      "category": "Tree Service",
+      "city": "San Leandro",
+      "address": "520 Doolittle Dr, San Leandro 94577",
+      "reviews": 49,
+      "rating": 4.7,
+      "open24_7": true,
+      "callOrder": 4
+    },
+    {
+      "leadId": "ncm-hayward-005",
+      "score": 75,
+      "temperature": "HOT",
+      "businessName": "Boyett Concrete Inc",
+      "phone": "510-264-9100",
+      "category": "Concrete",
+      "city": "Hayward",
+      "address": "2404 Tripaldi Way, Hayward 94545",
+      "reviews": 16,
+      "rating": 4.9,
+      "open24_7": true,
+      "callOrder": 5
+    },
+    {
+      "leadId": "ncm-hayward-006",
+      "score": 75,
+      "temperature": "HOT",
+      "businessName": "LS Trucking, Inc.",
+      "phone": "510-266-5213",
+      "category": "Trucking",
+      "city": "Hayward",
+      "address": "1774 W Winton Ave, Hayward 94545",
+      "reviews": 15,
+      "rating": 4.3,
+      "open24_7": true,
+      "callOrder": 6
+    },
+    {
+      "leadId": "ncm-hayward-007",
+      "score": 70,
+      "temperature": "HOT",
+      "businessName": "Daylight Transport",
+      "phone": "800-468-9999",
+      "category": "Trucking/LTL",
+      "city": "Hayward",
+      "address": "2340 Industrial Pkwy W, Hayward 94545",
+      "reviews": 98,
+      "rating": 3.6,
+      "open24_7": false,
+      "callOrder": 7
+    },
+    {
+      "leadId": "ncm-hayward-008",
+      "score": 68,
+      "temperature": "WARM",
+      "businessName": "Baystar Trans Inc",
+      "phone": "510-586-9300",
+      "category": "Trucking",
+      "city": "Hayward",
+      "address": "",
+      "reviews": null,
+      "rating": null,
+      "open24_7": null,
+      "callOrder": 8
+    },
+    {
+      "leadId": "ncm-hayward-009",
+      "score": 65,
+      "temperature": "WARM",
+      "businessName": "Rangel Concrete",
+      "phone": "510-292-6207",
+      "category": "Concrete",
+      "city": "San Lorenzo",
+      "address": "",
+      "reviews": null,
+      "rating": null,
+      "open24_7": null,
+      "callOrder": 9
+    },
+    {
+      "leadId": "ncm-hayward-010",
+      "score": 65,
+      "temperature": "WARM",
+      "businessName": "Mag Trucking",
+      "phone": "510-782-8801",
+      "category": "Trucking",
+      "city": "Hayward",
+      "address": "",
+      "reviews": null,
+      "rating": null,
+      "open24_7": null,
+      "callOrder": 10
+    },
+    {
+      "leadId": "ncm-hayward-011",
+      "score": 65,
+      "temperature": "WARM",
+      "businessName": "Cato's Paving",
+      "phone": "510-397-2677",
+      "category": "Asphalt/Paving",
+      "city": "Hayward",
+      "address": "",
+      "reviews": null,
+      "rating": null,
+      "open24_7": null,
+      "callOrder": 11
+    },
+    {
+      "leadId": "ncm-hayward-012",
+      "score": 65,
+      "temperature": "WARM",
+      "businessName": "Estes Express Lines",
+      "phone": "510-635-0165",
+      "category": "LTL Freight",
+      "city": "San Leandro",
+      "address": "",
+      "reviews": null,
+      "rating": null,
+      "open24_7": null,
+      "callOrder": 12
+    },
+    {
+      "leadId": "ncm-hayward-013",
+      "score": 65,
+      "temperature": "WARM",
+      "businessName": "Saia LTL Freight",
+      "phone": "510-347-6890",
+      "category": "LTL Freight",
+      "city": "San Leandro",
+      "address": "",
+      "reviews": null,
+      "rating": null,
+      "open24_7": null,
+      "callOrder": 13
+    },
+    {
+      "leadId": "ncm-hayward-014",
+      "score": 65,
+      "temperature": "WARM",
+      "businessName": "DHE Dependable Highway Express",
+      "phone": "510-357-2223",
+      "category": "LTL",
+      "city": "San Leandro",
+      "address": "",
+      "reviews": null,
+      "rating": null,
+      "open24_7": null,
+      "callOrder": 14
+    },
+    {
+      "leadId": "ncm-hayward-015",
+      "score": 65,
+      "temperature": "WARM",
+      "businessName": "Maguire Tree Care",
+      "phone": "650-844-2046",
+      "category": "Tree Service",
+      "city": "San Carlos",
+      "address": "",
+      "reviews": null,
+      "rating": null,
+      "open24_7": null,
+      "callOrder": 15
+    },
+    {
+      "leadId": "ncm-hayward-016",
+      "score": 63,
+      "temperature": "WARM",
+      "businessName": "10-4 Tow Of San Leandro",
+      "phone": "510-633-2727",
+      "category": "HD Towing",
+      "city": "San Leandro",
+      "address": "",
+      "reviews": null,
+      "rating": null,
+      "open24_7": null,
+      "callOrder": 16
+    },
+    {
+      "leadId": "ncm-hayward-017",
+      "score": 60,
+      "temperature": "WARM",
+      "businessName": "Roadstar Trucking Inc",
+      "phone": "510-487-2404",
+      "category": "Trucking",
+      "city": "Hayward",
+      "address": "",
+      "reviews": null,
+      "rating": null,
+      "open24_7": null,
+      "callOrder": 17
+    },
+    {
+      "leadId": "ncm-hayward-018",
+      "score": 60,
+      "temperature": "WARM",
+      "businessName": "Munoz Transport Service",
+      "phone": "510-385-9206",
+      "category": "Trucking",
+      "city": "Hayward",
+      "address": "",
+      "reviews": null,
+      "rating": null,
+      "open24_7": null,
+      "callOrder": 18
+    },
+    {
+      "leadId": "ncm-hayward-019",
+      "score": 60,
+      "temperature": "WARM",
+      "businessName": "American Asphalt R&R",
+      "phone": "510-723-0280",
+      "category": "Asphalt",
+      "city": "Hayward",
+      "address": "",
+      "reviews": null,
+      "rating": null,
+      "open24_7": null,
+      "callOrder": 19
+    },
+    {
+      "leadId": "ncm-hayward-020",
+      "score": 60,
+      "temperature": "WARM",
+      "businessName": "Rose Paving",
+      "phone": "510-770-1150",
+      "category": "Asphalt",
+      "city": "Hayward",
+      "address": "",
+      "reviews": null,
+      "rating": null,
+      "open24_7": null,
+      "callOrder": 20
+    },
+    {
+      "leadId": "ncm-hayward-021",
+      "score": 60,
+      "temperature": "WARM",
+      "businessName": "Malcolm Drilling",
+      "phone": "510-780-9181",
+      "category": "Drilling/Excavation",
+      "city": "Hayward",
+      "address": "",
+      "reviews": null,
+      "rating": null,
+      "open24_7": null,
+      "callOrder": 21
+    },
+    {
+      "leadId": "ncm-hayward-022",
+      "score": 60,
+      "temperature": "WARM",
+      "businessName": "GreenWaste Hayward Transfer",
+      "phone": "510-606-1548",
+      "category": "Waste",
+      "city": "Hayward",
+      "address": "",
+      "reviews": null,
+      "rating": null,
+      "open24_7": null,
+      "callOrder": 22
+    }
+  ]
+}
