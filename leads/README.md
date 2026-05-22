@@ -22,3 +22,7 @@ Prepared for **Bryan @ NorCal CARB Mobile** (`bryan@norcalcarbmobile.com`).
 5. **Dial** — AirDrop/open `hayward-leads-dialer.html` on iPhone.
 
 Callback on all messages: **916-890-4427**.
+
+## Gumption internals
+
+See [`../docs/gumption-architecture-review.md`](../docs/gumption-architecture-review.md) for reverse-engineered routes, tRPC API, and how to add file-upload assimilation.
