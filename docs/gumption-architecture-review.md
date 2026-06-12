@@ -1,19 +1,29 @@
-# Gumption Architecture Review (Reverse-Engineered)
+# Gumption Architecture Review
 
-**Live app:** https://gumption.manus.space  
-**Review date:** 2026-05-22  
-**Method:** Production bundle analysis + public tRPC API probing  
+**Live CRM:** https://gumption.manus.space  
+**Linked repo:** https://github.com/BelichickGillisMusk/mostly-gumption-and-uunit  
+**Review date:** 2026-05-22 (updated after repo clone)
 
-## Executive summary
+## Important: repo vs live app
 
-Gumption is a **NorCal CARB / Gillis Institute CRM** deployed on **Manus** (`*.manus.space`). The **source code is not in the `briefs` repo** or any public `BelichickGillisMusk/gumption` GitHub repo. It exists as a compiled Vite/React app with an Express + tRPC backend.
+| | `gumption.manus.space` | `mostly-gumption-and-uunit` |
+|--|------------------------|----------------------------|
+| **Product** | NorCal CARB CRM (leads, cold calls, knowledge) | **Rent-Ruby** — Oakland property / tenant portal |
+| **Stack** | React + Express + **tRPC** | React + Express + **REST** + SQLite |
+| **Deploy** | Manus (`*.manus.space`) | Cloudflare Pages (`rent-ruby`) |
+| **Cold Calls** | `/coldcall` — failed OBD tests | ❌ not present |
+| **Knowledge Base** | `/knowledge` — docs with `source_file` | **Info Nook** — static tenant guides |
+| **File upload** | Not wired in production | Photo upload (base64) + CSV button (UI only) |
 
-The closest related repo is [GILLIS-HQ](https://github.com/BelichickGillisMusk/GILLIS-HQ) (virtual office / Spark app) — **different product**, no Cold Calls or Knowledge Base modules.
+The GitHub repo name suggests Gumption + The Unit, but **`main` currently contains Rent-Ruby** (merged via PR #5 `unit-gumption-cloudflare-deploy`). The **Gumption CRM source is still on Manus**, not in this repo.
 
-To add features (file upload → assimilate into Knowledge / Leads / Cold Calls), you need either:
+To edit Gumption CRM features, export the Manus project to GitHub (e.g. `BelichickGillisMusk/gumption`). Use this repo for Rent-Ruby / Unit patterns only.
 
-1. **Export the Manus project** that built Gumption into GitHub, or  
-2. **Rebuild** using this reverse-engineered map + the implementation spec below.
+---
+
+## Part A — Gumption CRM (live at gumption.manus.space)
+
+Reverse-engineered from production bundle + tRPC API (see original sections below).
 
 ---
 
@@ -268,3 +278,101 @@ Until export, use this doc + `curl` probes against `/api/trpc` as the contract.
 3. Implement `knowledge.ingestFile` + wire Add Document UI.  
 4. Implement `leads.importCsv` for Cold Call / Hayward batches.  
 5. Redeploy to `gumption.manus.space`.
+
+---
+
+## Part B — `mostly-gumption-and-uunit` (Rent-Ruby source)
+
+Cloned from https://github.com/BelichickGillisMusk/mostly-gumption-and-uunit
+
+### Stack
+
+| Layer | Path / tech |
+|-------|-------------|
+| Server | `server.ts` — Express, **better-sqlite3** (`rentroll_v3.db`) |
+| Client | `src/App.tsx` + `src/components/*` |
+| Dev | `npm run dev` → `tsx server.ts` (port 3000) |
+| Deploy | `.github/workflows/deploy.yml` → Cloudflare Pages `rent-ruby` |
+
+### Existing file / data patterns (reuse for assimilation)
+
+**1. Photo upload → SQLite (working)**
+
+```356:385:gumption-src/src/components/RentRollDashboard.tsx
+  const handleFileUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    // ...
+    reader.onloadend = async () => {
+      const base64String = reader.result as string;
+      await fetch('/api/maintenance', {
+        method: 'POST',
+        body: JSON.stringify({ unit_id, description, photo_url: base64String })
+      });
+    };
+    reader.readAsDataURL(file);
+  };
+```
+
+**2. Knowledge-like tables (seeded, read-only API)**
+
+- `GET /api/legal-forms` → `legal_forms` (title, category, content_template)
+- `GET /api/laws-regulations` → `laws_regulations`
+- `CEOBriefingPortal.tsx` consumes these + Gemini for lease generation
+
+**3. Info Nook (tenant knowledge UI — static)**
+
+- `TenantPortal.tsx` → `activeTab === 'info-nook'`
+- Hardcoded cards (Move-Out Checklist, Building Rules 2026, etc.)
+- **No upload** — best place to add tenant document assimilation
+
+**4. CSV import (UI stub only)**
+
+- `SFPlusModule.tsx` line 62: **"Import CSV"** button with no handler
+- Bank transactions: `GET/POST /api/bank-transactions` — ready for CSV ingest
+
+### Recommended additions in THIS repo
+
+If you want file assimilation in Rent-Ruby / Unit:
+
+```ts
+// server.ts — new table
+CREATE TABLE IF NOT EXISTS knowledge_docs (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  title TEXT NOT NULL,
+  category TEXT,
+  content TEXT NOT NULL,
+  source_file TEXT,
+  tags TEXT,
+  created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+);
+
+// POST /api/knowledge/ingest
+app.post("/api/knowledge/ingest", (req, res) => {
+  const { filename, content, category, tags } = req.body;
+  // insert into knowledge_docs
+});
+
+// Wire Info Nook or CEO Briefing "Add Document" → FileReader → POST
+```
+
+Mirror the Gumption CRM spec (Part A) but use REST instead of tRPC.
+
+### Repo map
+
+```
+mostly-gumption-and-uunit/
+├── server.ts              # All REST routes + SQLite schema
+├── src/App.tsx            # Hub / Admin / Tenant views
+├── src/components/
+│   ├── RentRollDashboard.tsx   # ✅ file upload pattern
+│   ├── TenantPortal.tsx        # Info Nook → add doc upload here
+│   ├── CEOBriefingPortal.tsx   # legal forms + AI
+│   ├── SFPlusModule.tsx        # stub CSV import
+│   └── MaintenanceModule.tsx
+├── DEPLOYMENT.md          # Cloudflare secrets
+└── AGENTS.md              # Rent-Ruby design rules
+```
+
+---
+
+## Part A (continued) — Gumption CRM details
