@@ -242,6 +242,17 @@ const CommandCenterData = {
             priority: "high",
             dueDate: "This Week",
             progress: 10
+        },
+        {
+            id: "task-013",
+            title: "Monthly Retest Retention Check — June 2026",
+            description: "164 vehicles due retest in 0–90 days (13 URGENT, 48 HOT, 60 WARM, 43 EARLY). Enrich contacts from Master CRM, call URGENT/HOT, email WARM/EARLY. Notes: briefs/monthly-retest-retention-notes-2026-06-23.md | Data: briefs/retest-retention-2026-06-23.json",
+            agent: "client-agent",
+            agentName: "Client Relations",
+            status: "active",
+            priority: "critical",
+            dueDate: "Tonight, 10:30 PM",
+            progress: 25
         }
     ],
 
@@ -312,6 +323,17 @@ const CommandCenterData = {
             unread: false,
             priority: "high",
             category: "alert"
+        },
+        {
+            id: "mail-009",
+            from: "Client Relations Agent — Monthly Retest Check",
+            email: "bryan@norcalcarbmobile.com",
+            subject: "🔄 MONTHLY RETEST CHECK: 164 Vehicles Due — 13 URGENT, 48 HOT",
+            preview: "Retest Retention Engine ran against Gumption CRM (957 tests). 164 vehicles need outreach in next 90 days. Est. revenue at stake: $24,600–$82,000. ⚠️ Enrich plate→contact via Master CRM before calling. See briefs/monthly-retest-retention-notes-2026-06-23.md",
+            time: "Just now",
+            unread: true,
+            priority: "critical",
+            category: "action-required"
         },
         {
             id: "mail-008",
@@ -450,6 +472,13 @@ const CommandCenterData = {
 
     // Activity Feed
     activities: [
+        {
+            id: "act-008",
+            type: "agent",
+            icon: "user",
+            text: "<strong>Client Relations</strong> ran Monthly Retest Retention Check — 164 vehicles due (13 URGENT, 48 HOT)",
+            time: "Just now"
+        },
         {
             id: "act-001",
             type: "task_complete",
