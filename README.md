@@ -42,3 +42,34 @@ A multiple-choice quick question brief located at [`briefs/brian-calendar-quick-
 #### How It Works
 
 The brief is structured as a JSON questionnaire with five questions that guide Brian through calendar planning. After the questions, the `agentTaskStatuses` section provides a dashboard view of all agent tasks and their current statuses, giving Brian full visibility into what each agent is working on.
+
+---
+
+## Monthly Retest Retention Check (NorCal CARB Mobile)
+
+A recurring monthly workflow that pulls existing NorCal CARB Mobile customers from the Master CRM, calculates each customer's next Clean Truck Check due date, buckets them by urgency (🔴 URGENT / 🟠 HOT / 🟡 WARM / 🟢 EARLY), and produces a prioritized outreach list.
+
+- **Spec:** [`briefs/retest-retention-check.json`](briefs/retest-retention-check.json)
+- **Engine:** [`leads/retest_retention_check.py`](leads/retest_retention_check.py) (Python 3, stdlib only)
+- **Sample data:** [`leads/retest-customers-sample.csv`](leads/retest-customers-sample.csv)
+- **Calendar trigger:** _Monthly Retest Retention Check - Run Skill_ — 23rd of every month, trigger phrase `Run monthly retest check`.
+
+### Run it
+
+```bash
+# 1. Export the Master CRM (Google Sheet 1TdNnf7eLaPNN3anaBGpNdjo_unK04zWwZJ859ZDvIO4)
+#    File → Download → CSV → save as leads/retest-customers.csv
+# 2. Run the engine:
+python3 leads/retest_retention_check.py --as-of $(date +%F)
+```
+
+If `leads/retest-customers.csv` is missing, the engine falls back to the synthetic sample dataset and stamps the report with a ⚠️ **Demo data** banner so nobody calls a fake customer.
+
+### Outputs
+
+Every run writes two files keyed by year/month:
+
+- `docs/retest-retention-YYYY-MM.md` — human-readable report (bucket counts, prioritized lead lists, ready-to-send email body).
+- `briefs/retest-retention-YYYY-MM.json` — machine-readable snapshot consumed by the Command Center.
+
+This month's run lives at [`docs/retest-retention-2026-06.md`](docs/retest-retention-2026-06.md).
