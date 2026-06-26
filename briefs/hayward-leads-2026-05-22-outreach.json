@@ -25,7 +25,8 @@
     },
     "version": "1.0.0",
     "status": "ready",
-    "lastUpdated": "2026-05-22"
+    "lastUpdated": "2026-05-22",
+    "caller": "Camila (cold calls on Bryan's behalf)"
   },
 
   "templates": {
@@ -39,6 +40,21 @@
       "bodyPlainText": "Hi {{contactName}},\n\nI'm Bryan with NorCal CARB Mobile. I'll be in {{city}} this Saturday doing Clean Truck Checks for fleets in your area.\n\nIf you run diesels over 14,000 lbs, we can knock yours out on the same trip:\n• Mobile OBD emissions testing — $75/vehicle\n• OVI smoke opacity testing — $250/vehicle\n• Fleet discounts and flexible scheduling\n\nWe come to your yard — 24/7 service, 363 days a year.\n\nBook or request a fleet quote: https://norcalcarbmobile.com/book-schedule-carb-smoke-test-sacramento\nOr call/text: 415-900-8563\n\nCall me before the State calls you.\n\nThanks,\nBryan\nNorCal CARB Mobile\nbryan@norcalcarbmobile.com\nhttps://norcalcarbmobile.com"
     },
     "voicemail": "Hey [Name], Bryan with NorCal CARB Mobile. I'll be in [city] tomorrow doing Clean Truck Checks for fleets right by you. If you've got diesels over 14,000 lbs I can knock yours out same trip — mobile OBD and OVI smoke opacity, 24/7, 363 days a year. Call me before the State calls you. 415-900-8563."
+  },
+
+  "callHandling": {
+    "for": "Camila",
+    "from": "Bryan",
+    "rule": "If they yell or push back, don't argue. Take ownership, say Bryan will handle it, log the call, move on.",
+    "opening": "Hi, this is Camila — I'm calling for Bryan with NorCal CARB Mobile. He's doing mobile Clean Truck Checks in your area this week. Is this a good time for thirty seconds?",
+    "ifYelledAt": {
+      "say": "I hear you — I'm sorry about that. I'll note this and have Bryan take care of it personally. Would you prefer he calls you directly, or should I take you off our list?",
+      "doNot": ["Argue about CARB rules", "Keep pitching after they say stop", "Promise pricing you can't confirm"],
+      "gumptionOutcome": "Callback if they want Bryan; Not Fit if they want off the list",
+      "notesTemplate": "Hostile — Camila de-escalated. Bryan to follow up: [what they said]"
+    },
+    "handoffToBryan": "Bryan will call you back from 415-900-8563 — usually same day.",
+    "bryanCallback": "415-900-8563"
   },
 
   "leads": [
