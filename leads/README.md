@@ -21,7 +21,7 @@ Prepared for **Bryan @ NorCal CARB Mobile** (`bryan@norcalcarbmobile.com`).
 4. **Email** — copy drafts from `hayward-leads-email-drafts.md` into Gmail drafts (phones only in this batch).
 5. **Dial** — AirDrop/open `hayward-leads-dialer.html` on iPhone.
 
-Callback on all messages: **916-890-4427**.
+Callback on all messages: **415-900-8563**.
 
 ## Gumption internals
 

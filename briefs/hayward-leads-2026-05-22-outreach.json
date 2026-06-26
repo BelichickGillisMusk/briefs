@@ -6,8 +6,8 @@
     "type": "outreach-package",
     "recipient": "Bryan",
     "fromAccount": "bryan@norcalcarbmobile.com",
-    "callbackPhone": "916-890-4427",
-    "callbackPhoneE164": "+19168904427",
+    "callbackPhone": "415-900-8563",
+    "callbackPhoneE164": "+14159008563",
     "bookingUrl": "https://norcalcarbmobile.com/book-schedule-carb-smoke-test-sacramento",
     "masterCrmSheetId": "1TdNnf7eLaPNN3anaBGpNdjo_unK04zWwZJ859ZDvIO4",
     "masterCrmTab": "Leads_2026-05-14",
@@ -30,15 +30,15 @@
 
   "templates": {
     "sms": {
-      "body": "Hi—Bryan w/ NorCal CARB Mobile. In {{city}} Sat doing mobile Clean Truck Checks (diesel 14k+ lbs): OBD $75 + OVI smoke opacity, same trip. 24/7, 363 days/yr. Call before CA does: 916-890-4427",
+      "body": "Hi—Bryan w/ NorCal CARB Mobile. In {{city}} Sat doing mobile Clean Truck Checks (diesel 14k+ lbs): OBD $75 + OVI smoke opacity, same trip. 24/7, 363 days/yr. Call before CA does: 415-900-8563",
       "segments": 1,
       "maxLength": 160
     },
     "email": {
       "subject": "Mobile Clean Truck Check near {{city}} — same-trip fleet testing",
-      "bodyPlainText": "Hi {{contactName}},\n\nI'm Bryan with NorCal CARB Mobile. I'll be in {{city}} this Saturday doing Clean Truck Checks for fleets in your area.\n\nIf you run diesels over 14,000 lbs, we can knock yours out on the same trip:\n• Mobile OBD emissions testing — $75/vehicle\n• OVI smoke opacity testing — $250/vehicle\n• Fleet discounts and flexible scheduling\n\nWe come to your yard — 24/7 service, 363 days a year.\n\nBook or request a fleet quote: https://norcalcarbmobile.com/book-schedule-carb-smoke-test-sacramento\nOr call/text: 916-890-4427\n\nCall me before the State calls you.\n\nThanks,\nBryan\nNorCal CARB Mobile\nbryan@norcalcarbmobile.com\nhttps://norcalcarbmobile.com"
+      "bodyPlainText": "Hi {{contactName}},\n\nI'm Bryan with NorCal CARB Mobile. I'll be in {{city}} this Saturday doing Clean Truck Checks for fleets in your area.\n\nIf you run diesels over 14,000 lbs, we can knock yours out on the same trip:\n• Mobile OBD emissions testing — $75/vehicle\n• OVI smoke opacity testing — $250/vehicle\n• Fleet discounts and flexible scheduling\n\nWe come to your yard — 24/7 service, 363 days a year.\n\nBook or request a fleet quote: https://norcalcarbmobile.com/book-schedule-carb-smoke-test-sacramento\nOr call/text: 415-900-8563\n\nCall me before the State calls you.\n\nThanks,\nBryan\nNorCal CARB Mobile\nbryan@norcalcarbmobile.com\nhttps://norcalcarbmobile.com"
     },
-    "voicemail": "Hey [Name], Bryan with NorCal CARB Mobile. I'll be in [city] tomorrow doing Clean Truck Checks for fleets right by you. If you've got diesels over 14,000 lbs I can knock yours out same trip — mobile OBD and OVI smoke opacity, 24/7, 363 days a year. Call me before the State calls you. 916-890-4427."
+    "voicemail": "Hey [Name], Bryan with NorCal CARB Mobile. I'll be in [city] tomorrow doing Clean Truck Checks for fleets right by you. If you've got diesels over 14,000 lbs I can knock yours out same trip — mobile OBD and OVI smoke opacity, 24/7, 363 days a year. Call me before the State calls you. 415-900-8563."
   },
 
   "leads": [
@@ -50,7 +50,7 @@
       "phone": "+15108718788",
       "city": "Hayward",
       "category": "Tree Service",
-      "sms": "Hi—Bryan w/ NorCal CARB Mobile. In Hayward Sat doing mobile Clean Truck Checks (diesel 14k+ lbs): OBD $75 + OVI smoke opacity, same trip. 24/7. Call before CA does: 916-890-4427",
+      "sms": "Hi—Bryan w/ NorCal CARB Mobile. In Hayward Sat doing mobile Clean Truck Checks (diesel 14k+ lbs): OBD $75 + OVI smoke opacity, same trip. 24/7. Call before CA does: 415-900-8563",
       "emailTo": "",
       "emailSubject": "Mobile Clean Truck Check near Hayward — ArborTech fleet",
       "callOrder": 1
@@ -63,7 +63,7 @@
       "phone": "+19252009057",
       "city": "Hayward",
       "category": "Tree Service",
-      "sms": "Hi—Bryan w/ NorCal CARB Mobile. In Hayward Sat doing mobile Clean Truck Checks (diesel 14k+ lbs): OBD $75 + OVI smoke opacity, same trip. 24/7. Call before CA does: 916-890-4427",
+      "sms": "Hi—Bryan w/ NorCal CARB Mobile. In Hayward Sat doing mobile Clean Truck Checks (diesel 14k+ lbs): OBD $75 + OVI smoke opacity, same trip. 24/7. Call before CA does: 415-900-8563",
       "emailTo": "",
       "emailSubject": "Mobile Clean Truck Check near Hayward — Saunders Tree",
       "callOrder": 2
@@ -76,7 +76,7 @@
       "phone": "+15107926590",
       "city": "Hayward",
       "category": "Tree Service",
-      "sms": "Hi—Bryan w/ NorCal CARB Mobile. In Hayward Sat doing mobile Clean Truck Checks (diesel 14k+ lbs): OBD $75 + OVI smoke opacity, same trip. 24/7. Call before CA does: 916-890-4427",
+      "sms": "Hi—Bryan w/ NorCal CARB Mobile. In Hayward Sat doing mobile Clean Truck Checks (diesel 14k+ lbs): OBD $75 + OVI smoke opacity, same trip. 24/7. Call before CA does: 415-900-8563",
       "emailTo": "",
       "emailSubject": "Mobile Clean Truck Check near Hayward — Castillo Tree",
       "callOrder": 3
@@ -89,7 +89,7 @@
       "phone": "+15103839585",
       "city": "San Leandro",
       "category": "Tree Service",
-      "sms": "Hi—Bryan w/ NorCal CARB Mobile. In San Leandro Sat doing mobile Clean Truck Checks (diesel 14k+ lbs): OBD $75 + OVI smoke opacity, same trip. 24/7. Call before CA does: 916-890-4427",
+      "sms": "Hi—Bryan w/ NorCal CARB Mobile. In San Leandro Sat doing mobile Clean Truck Checks (diesel 14k+ lbs): OBD $75 + OVI smoke opacity, same trip. 24/7. Call before CA does: 415-900-8563",
       "emailTo": "",
       "emailSubject": "Mobile Clean Truck Check near San Leandro — Graham Tree",
       "callOrder": 4
@@ -102,7 +102,7 @@
       "phone": "+15102649100",
       "city": "Hayward",
       "category": "Concrete",
-      "sms": "Hi—Bryan w/ NorCal CARB Mobile. In Hayward Sat doing mobile Clean Truck Checks (diesel 14k+ lbs): OBD $75 + OVI smoke opacity, same trip. 24/7. Call before CA does: 916-890-4427",
+      "sms": "Hi—Bryan w/ NorCal CARB Mobile. In Hayward Sat doing mobile Clean Truck Checks (diesel 14k+ lbs): OBD $75 + OVI smoke opacity, same trip. 24/7. Call before CA does: 415-900-8563",
       "emailTo": "",
       "emailSubject": "Mobile Clean Truck Check near Hayward — Boyett Concrete fleet",
       "callOrder": 5
@@ -115,7 +115,7 @@
       "phone": "+15102665213",
       "city": "Hayward",
       "category": "Trucking",
-      "sms": "Hi—Bryan w/ NorCal CARB Mobile. In Hayward Sat doing mobile Clean Truck Checks (diesel 14k+ lbs): OBD $75 + OVI smoke opacity, same trip. 24/7. Call before CA does: 916-890-4427",
+      "sms": "Hi—Bryan w/ NorCal CARB Mobile. In Hayward Sat doing mobile Clean Truck Checks (diesel 14k+ lbs): OBD $75 + OVI smoke opacity, same trip. 24/7. Call before CA does: 415-900-8563",
       "emailTo": "",
       "emailSubject": "Mobile Clean Truck Check — LS Trucking Hayward yard",
       "callOrder": 6
@@ -128,7 +128,7 @@
       "phone": "+18004689999",
       "city": "Hayward",
       "category": "Trucking/LTL",
-      "sms": "Hi—Bryan w/ NorCal CARB Mobile. In Hayward Sat doing mobile Clean Truck Checks (diesel 14k+ lbs): OBD $75 + OVI smoke opacity, same trip. 24/7. Call before CA does: 916-890-4427",
+      "sms": "Hi—Bryan w/ NorCal CARB Mobile. In Hayward Sat doing mobile Clean Truck Checks (diesel 14k+ lbs): OBD $75 + OVI smoke opacity, same trip. 24/7. Call before CA does: 415-900-8563",
       "emailTo": "",
       "emailSubject": "Mobile Clean Truck Check — Daylight Transport Hayward",
       "callOrder": 7,
@@ -142,7 +142,7 @@
       "phone": "+15105869300",
       "city": "Hayward",
       "category": "Trucking",
-      "sms": "Hi—Bryan w/ NorCal CARB Mobile. In Hayward Sat doing mobile Clean Truck Checks (diesel 14k+ lbs): OBD $75 + OVI smoke opacity, same trip. 24/7. Call before CA does: 916-890-4427",
+      "sms": "Hi—Bryan w/ NorCal CARB Mobile. In Hayward Sat doing mobile Clean Truck Checks (diesel 14k+ lbs): OBD $75 + OVI smoke opacity, same trip. 24/7. Call before CA does: 415-900-8563",
       "callOrder": 8
     },
     {
@@ -153,7 +153,7 @@
       "phone": "+15102926207",
       "city": "San Lorenzo",
       "category": "Concrete",
-      "sms": "Hi—Bryan w/ NorCal CARB Mobile. Near Hayward Sat — mobile Clean Truck Checks (diesel 14k+ lbs): OBD $75 + OVI smoke opacity, same trip. 24/7. Call before CA does: 916-890-4427",
+      "sms": "Hi—Bryan w/ NorCal CARB Mobile. Near Hayward Sat — mobile Clean Truck Checks (diesel 14k+ lbs): OBD $75 + OVI smoke opacity, same trip. 24/7. Call before CA does: 415-900-8563",
       "callOrder": 9
     },
     {
@@ -164,7 +164,7 @@
       "phone": "+15107828801",
       "city": "Hayward",
       "category": "Trucking",
-      "sms": "Hi—Bryan w/ NorCal CARB Mobile. In Hayward Sat doing mobile Clean Truck Checks (diesel 14k+ lbs): OBD $75 + OVI smoke opacity, same trip. 24/7. Call before CA does: 916-890-4427",
+      "sms": "Hi—Bryan w/ NorCal CARB Mobile. In Hayward Sat doing mobile Clean Truck Checks (diesel 14k+ lbs): OBD $75 + OVI smoke opacity, same trip. 24/7. Call before CA does: 415-900-8563",
       "callOrder": 10
     },
     {
@@ -175,7 +175,7 @@
       "phone": "+15103972677",
       "city": "Hayward",
       "category": "Asphalt/Paving",
-      "sms": "Hi—Bryan w/ NorCal CARB Mobile. In Hayward Sat doing mobile Clean Truck Checks (diesel 14k+ lbs): OBD $75 + OVI smoke opacity, same trip. 24/7. Call before CA does: 916-890-4427",
+      "sms": "Hi—Bryan w/ NorCal CARB Mobile. In Hayward Sat doing mobile Clean Truck Checks (diesel 14k+ lbs): OBD $75 + OVI smoke opacity, same trip. 24/7. Call before CA does: 415-900-8563",
       "callOrder": 11
     },
     {
@@ -186,7 +186,7 @@
       "phone": "+15106350165",
       "city": "San Leandro",
       "category": "LTL Freight",
-      "sms": "Hi—Bryan w/ NorCal CARB Mobile. In San Leandro Sat doing mobile Clean Truck Checks (diesel 14k+ lbs): OBD $75 + OVI smoke opacity, same trip. 24/7. Call before CA does: 916-890-4427",
+      "sms": "Hi—Bryan w/ NorCal CARB Mobile. In San Leandro Sat doing mobile Clean Truck Checks (diesel 14k+ lbs): OBD $75 + OVI smoke opacity, same trip. 24/7. Call before CA does: 415-900-8563",
       "callOrder": 12
     },
     {
@@ -197,7 +197,7 @@
       "phone": "+15103476890",
       "city": "San Leandro",
       "category": "LTL Freight",
-      "sms": "Hi—Bryan w/ NorCal CARB Mobile. In San Leandro Sat doing mobile Clean Truck Checks (diesel 14k+ lbs): OBD $75 + OVI smoke opacity, same trip. 24/7. Call before CA does: 916-890-4427",
+      "sms": "Hi—Bryan w/ NorCal CARB Mobile. In San Leandro Sat doing mobile Clean Truck Checks (diesel 14k+ lbs): OBD $75 + OVI smoke opacity, same trip. 24/7. Call before CA does: 415-900-8563",
       "callOrder": 13
     },
     {
@@ -208,7 +208,7 @@
       "phone": "+15103572223",
       "city": "San Leandro",
       "category": "LTL",
-      "sms": "Hi—Bryan w/ NorCal CARB Mobile. In San Leandro Sat doing mobile Clean Truck Checks (diesel 14k+ lbs): OBD $75 + OVI smoke opacity, same trip. 24/7. Call before CA does: 916-890-4427",
+      "sms": "Hi—Bryan w/ NorCal CARB Mobile. In San Leandro Sat doing mobile Clean Truck Checks (diesel 14k+ lbs): OBD $75 + OVI smoke opacity, same trip. 24/7. Call before CA does: 415-900-8563",
       "callOrder": 14
     },
     {
@@ -219,7 +219,7 @@
       "phone": "+16508442046",
       "city": "San Carlos",
       "category": "Tree Service",
-      "sms": "Hi—Bryan w/ NorCal CARB Mobile. Mobile Clean Truck Checks (diesel 14k+ lbs): OBD $75 + OVI smoke opacity. Can route near you this week. 24/7. Call before CA does: 916-890-4427",
+      "sms": "Hi—Bryan w/ NorCal CARB Mobile. Mobile Clean Truck Checks (diesel 14k+ lbs): OBD $75 + OVI smoke opacity. Can route near you this week. 24/7. Call before CA does: 415-900-8563",
       "callOrder": 15,
       "notes": "Off Hayward cluster — softer geo in SMS"
     },
@@ -231,7 +231,7 @@
       "phone": "+15106332727",
       "city": "San Leandro",
       "category": "HD Towing",
-      "sms": "Hi—Bryan w/ NorCal CARB Mobile. In San Leandro Sat doing mobile Clean Truck Checks (diesel 14k+ lbs): OBD $75 + OVI smoke opacity, same trip. 24/7. Call before CA does: 916-890-4427",
+      "sms": "Hi—Bryan w/ NorCal CARB Mobile. In San Leandro Sat doing mobile Clean Truck Checks (diesel 14k+ lbs): OBD $75 + OVI smoke opacity, same trip. 24/7. Call before CA does: 415-900-8563",
       "callOrder": 16
     },
     {
@@ -242,7 +242,7 @@
       "phone": "+15104872404",
       "city": "Hayward",
       "category": "Trucking",
-      "sms": "Hi—Bryan w/ NorCal CARB Mobile. In Hayward Sat doing mobile Clean Truck Checks (diesel 14k+ lbs): OBD $75 + OVI smoke opacity, same trip. 24/7. Call before CA does: 916-890-4427",
+      "sms": "Hi—Bryan w/ NorCal CARB Mobile. In Hayward Sat doing mobile Clean Truck Checks (diesel 14k+ lbs): OBD $75 + OVI smoke opacity, same trip. 24/7. Call before CA does: 415-900-8563",
       "callOrder": 17
     },
     {
@@ -253,7 +253,7 @@
       "phone": "+15103859206",
       "city": "Hayward",
       "category": "Trucking",
-      "sms": "Hi—Bryan w/ NorCal CARB Mobile. In Hayward Sat doing mobile Clean Truck Checks (diesel 14k+ lbs): OBD $75 + OVI smoke opacity, same trip. 24/7. Call before CA does: 916-890-4427",
+      "sms": "Hi—Bryan w/ NorCal CARB Mobile. In Hayward Sat doing mobile Clean Truck Checks (diesel 14k+ lbs): OBD $75 + OVI smoke opacity, same trip. 24/7. Call before CA does: 415-900-8563",
       "callOrder": 18
     },
     {
@@ -264,7 +264,7 @@
       "phone": "+15107230280",
       "city": "Hayward",
       "category": "Asphalt",
-      "sms": "Hi—Bryan w/ NorCal CARB Mobile. In Hayward Sat doing mobile Clean Truck Checks (diesel 14k+ lbs): OBD $75 + OVI smoke opacity, same trip. 24/7. Call before CA does: 916-890-4427",
+      "sms": "Hi—Bryan w/ NorCal CARB Mobile. In Hayward Sat doing mobile Clean Truck Checks (diesel 14k+ lbs): OBD $75 + OVI smoke opacity, same trip. 24/7. Call before CA does: 415-900-8563",
       "callOrder": 19
     },
     {
@@ -275,7 +275,7 @@
       "phone": "+15107701150",
       "city": "Hayward",
       "category": "Asphalt",
-      "sms": "Hi—Bryan w/ NorCal CARB Mobile. In Hayward Sat doing mobile Clean Truck Checks (diesel 14k+ lbs): OBD $75 + OVI smoke opacity, same trip. 24/7. Call before CA does: 916-890-4427",
+      "sms": "Hi—Bryan w/ NorCal CARB Mobile. In Hayward Sat doing mobile Clean Truck Checks (diesel 14k+ lbs): OBD $75 + OVI smoke opacity, same trip. 24/7. Call before CA does: 415-900-8563",
       "callOrder": 20
     },
     {
@@ -286,7 +286,7 @@
       "phone": "+15107809181",
       "city": "Hayward",
       "category": "Drilling/Excavation",
-      "sms": "Hi—Bryan w/ NorCal CARB Mobile. In Hayward Sat doing mobile Clean Truck Checks (diesel 14k+ lbs): OBD $75 + OVI smoke opacity, same trip. 24/7. Call before CA does: 916-890-4427",
+      "sms": "Hi—Bryan w/ NorCal CARB Mobile. In Hayward Sat doing mobile Clean Truck Checks (diesel 14k+ lbs): OBD $75 + OVI smoke opacity, same trip. 24/7. Call before CA does: 415-900-8563",
       "callOrder": 21
     },
     {
@@ -297,7 +297,7 @@
       "phone": "+15106061548",
       "city": "Hayward",
       "category": "Waste",
-      "sms": "Hi—Bryan w/ NorCal CARB Mobile. In Hayward Sat doing mobile Clean Truck Checks (diesel 14k+ lbs): OBD $75 + OVI smoke opacity, same trip. 24/7. Call before CA does: 916-890-4427",
+      "sms": "Hi—Bryan w/ NorCal CARB Mobile. In Hayward Sat doing mobile Clean Truck Checks (diesel 14k+ lbs): OBD $75 + OVI smoke opacity, same trip. 24/7. Call before CA does: 415-900-8563",
       "callOrder": 22
     }
   ],
