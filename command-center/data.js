@@ -473,18 +473,18 @@ const CommandCenterData = {
     // Activity Feed
     activities: [
         {
-            id: "act-001",
-            type: "task_complete",
-            icon: "check",
-            text: "<strong>Calendar Agent</strong> completed daily schedule optimization",
-            time: "2 min ago"
-        },
-        {
             id: "act-retest",
             type: "agent",
             icon: "target",
             text: "<strong>Retest Retention Engine</strong> ran monthly check on real A+ calendar export — 77 customers, 0 actionable (peak hits Oct 2026)",
             time: "Just now"
+        },
+        {
+            id: "act-001",
+            type: "task_complete",
+            icon: "check",
+            text: "<strong>Calendar Agent</strong> completed daily schedule optimization",
+            time: "2 min ago"
         },
         {
             id: "act-000",
