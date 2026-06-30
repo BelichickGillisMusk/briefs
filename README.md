@@ -42,3 +42,53 @@ A multiple-choice quick question brief located at [`briefs/brian-calendar-quick-
 #### How It Works
 
 The brief is structured as a JSON questionnaire with five questions that guide Brian through calendar planning. After the questions, the `agentTaskStatuses` section provides a dashboard view of all agent tasks and their current statuses, giving Brian full visibility into what each agent is working on.
+
+---
+
+## Monthly Retest Retention Check (NorCal CARB Mobile)
+
+A recurring monthly workflow that pulls existing NorCal CARB Mobile customers from the Master CRM, calculates each customer's next Clean Truck Check due date, buckets them by urgency (🔴 URGENT / 🟠 HOT / 🟡 WARM / 🟢 EARLY), and produces a prioritized outreach list.
+
+- **Spec:** [`briefs/retest-retention-check.json`](briefs/retest-retention-check.json)
+- **Engine:** [`leads/retest_retention_check.py`](leads/retest_retention_check.py) (Python 3, stdlib only)
+- **Sample data:** [`leads/retest-customers-sample.csv`](leads/retest-customers-sample.csv)
+- **Calendar trigger:** _Monthly Retest Retention Check - Run Skill_ — 23rd of every month, trigger phrase `Run monthly retest check`.
+
+### Run it
+
+The engine expects a per-customer CRM keyed by `customer_id` with a `last_test_date`. There are two supported source shapes:
+
+**A. From the A+ Leads and Jobs Calendar export** (one row per job; what we currently get out of Squarespace / A+ Calendar):
+
+```bash
+# 1. Drop the A+ export at leads/aplus-jobs-calendar-<YYYY-MM-DD>_<YYYY-MM-DD>.csv
+# 2. Build the per-customer CRM:
+python3 leads/import_aplus_jobs_calendar.py \
+    --input leads/aplus-jobs-calendar-2025-10-14_2025-12-08.csv \
+    --output leads/retest-customers.csv
+# 3. Run the engine:
+python3 leads/retest_retention_check.py --as-of $(date +%F)
+```
+
+The importer dedupes jobs by phone (digits-only) when present, falls back to the first line of the Summary field otherwise, and writes the engine's expected schema.
+
+**B. From a hand-maintained Master CRM (Google Sheet `1TdNnf7eLaPNN3anaBGpNdjo_unK04zWwZJ859ZDvIO4`)**:
+
+```bash
+# 1. File → Download → CSV → save as leads/retest-customers.csv
+# 2. Run the engine:
+python3 leads/retest_retention_check.py --as-of $(date +%F)
+```
+
+If `leads/retest-customers.csv` is missing, the engine falls back to the synthetic sample dataset and stamps the report with a ⚠️ **Demo data** banner so nobody calls a fake customer.
+
+> ⚠️ **Coverage matters.** Make sure the source covers the full customer history, not just the last 8 weeks. A short slice will produce a report with 0 actionable rows because every customer's next-due date is too far out. The engine now writes a **Source coverage** + **12-month pipeline** section to make this visible.
+
+### Outputs
+
+Every run writes two files keyed by year/month:
+
+- `docs/retest-retention-YYYY-MM.md` — human-readable report (bucket counts, prioritized lead lists, ready-to-send email body).
+- `briefs/retest-retention-YYYY-MM.json` — machine-readable snapshot consumed by the Command Center.
+
+This month's run lives at [`docs/retest-retention-2026-06.md`](docs/retest-retention-2026-06.md).

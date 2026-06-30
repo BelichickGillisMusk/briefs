@@ -14691,5 +14691,7 @@
       "test_count": 1,
       "action": "MONITOR"
     }
-  ]
+  ],
+  "supersededBy": "docs/retest-retention-2026-06.md",
+  "supersededNote": "Gumption API vehicle-level analysis (no client linkage). Authoritative June 2026 check uses A+ calendar export via leads/retest_retention_check.py \u2014 0 actionable this cycle."
 }

@@ -1,5 +1,7 @@
 # Monthly Retest Retention Check — Meeting Notes
 
+> **⚠️ Superseded for outreach decisions.** This run used the Gumption CRM API (957 unlinked test records). The authoritative June 2026 check is on `main`: `docs/retest-retention-2026-06.md` (A+ Leads & Jobs Calendar export, 77 customers, **0 actionable** this cycle). Keep this file as a reference for the Gumption vehicle-level analysis only.
+
 **Event:** Monthly Retest Retention Check  
 **Date:** Tuesday, June 23, 2026 · 10:00–10:30 PM  
 **Recurrence:** Monthly on day 23  
