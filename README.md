@@ -56,14 +56,33 @@ A recurring monthly workflow that pulls existing NorCal CARB Mobile customers fr
 
 ### Run it
 
+The engine expects a per-customer CRM keyed by `customer_id` with a `last_test_date`. There are two supported source shapes:
+
+**A. From the A+ Leads and Jobs Calendar export** (one row per job; what we currently get out of Squarespace / A+ Calendar):
+
 ```bash
-# 1. Export the Master CRM (Google Sheet 1TdNnf7eLaPNN3anaBGpNdjo_unK04zWwZJ859ZDvIO4)
-#    File → Download → CSV → save as leads/retest-customers.csv
+# 1. Drop the A+ export at leads/aplus-jobs-calendar-<YYYY-MM-DD>_<YYYY-MM-DD>.csv
+# 2. Build the per-customer CRM:
+python3 leads/import_aplus_jobs_calendar.py \
+    --input leads/aplus-jobs-calendar-2025-10-14_2025-12-08.csv \
+    --output leads/retest-customers.csv
+# 3. Run the engine:
+python3 leads/retest_retention_check.py --as-of $(date +%F)
+```
+
+The importer dedupes jobs by phone (digits-only) when present, falls back to the first line of the Summary field otherwise, and writes the engine's expected schema.
+
+**B. From a hand-maintained Master CRM (Google Sheet `1TdNnf7eLaPNN3anaBGpNdjo_unK04zWwZJ859ZDvIO4`)**:
+
+```bash
+# 1. File → Download → CSV → save as leads/retest-customers.csv
 # 2. Run the engine:
 python3 leads/retest_retention_check.py --as-of $(date +%F)
 ```
 
 If `leads/retest-customers.csv` is missing, the engine falls back to the synthetic sample dataset and stamps the report with a ⚠️ **Demo data** banner so nobody calls a fake customer.
+
+> ⚠️ **Coverage matters.** Make sure the source covers the full customer history, not just the last 8 weeks. A short slice will produce a report with 0 actionable rows because every customer's next-due date is too far out. The engine now writes a **Source coverage** + **12-month pipeline** section to make this visible.
 
 ### Outputs
 

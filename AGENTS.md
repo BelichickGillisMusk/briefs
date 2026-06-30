@@ -49,15 +49,23 @@ A recurring workflow triggered by the calendar event _Monthly Retest Retention C
 
 - Spec: `briefs/retest-retention-check.json`
 - Engine: `leads/retest_retention_check.py` (Python 3 stdlib only)
+- Importer (A+ Calendar → CRM schema): `leads/import_aplus_jobs_calendar.py`
 - Sample data: `leads/retest-customers-sample.csv` (used as fallback when no real CRM export is present)
 
-To regenerate this month's report:
+Two source shapes are supported:
 
 ```bash
+# A. From an A+ Leads and Jobs Calendar export (jobs log; current Squarespace export)
+python3 leads/import_aplus_jobs_calendar.py \
+    --input leads/aplus-jobs-calendar-YYYY-MM-DD_YYYY-MM-DD.csv \
+    --output leads/retest-customers.csv
+python3 leads/retest_retention_check.py --as-of $(date +%F)
+
+# B. From a hand-maintained Master CRM CSV (already in the engine schema)
 python3 leads/retest_retention_check.py --as-of $(date +%F)
 ```
 
-The script prefers `leads/retest-customers.csv` (real Master CRM export) when present, otherwise falls back to the sample dataset and stamps the output with a Demo Data banner. Outputs land at `docs/retest-retention-YYYY-MM.md` and `briefs/retest-retention-YYYY-MM.json`. See the README for full details.
+The engine prefers `leads/retest-customers.csv` (real Master CRM export) when present, otherwise falls back to the sample dataset and stamps the output with a Demo Data banner. Outputs land at `docs/retest-retention-YYYY-MM.md` and `briefs/retest-retention-YYYY-MM.json`. The report includes Source-coverage and 12-month-pipeline sections so partial exports are obvious. See the README for full details.
 
 ### Lint / test / build
 
