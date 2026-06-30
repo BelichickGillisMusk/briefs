@@ -197,6 +197,34 @@ def render_markdown(
             "`leads/retest-customers.csv` and re-run before calling anyone."
         )
         lines.append("")
+
+    if customers:
+        min_last = min(c.last_test_date for c in customers)
+        max_last = max(c.last_test_date for c in customers)
+        min_next = min(c.next_due_date for c in customers)
+        max_next = max(c.next_due_date for c in customers)
+        with_phone = sum(1 for c in customers if c.phone.strip())
+        with_email = sum(1 for c in customers if c.email.strip())
+        lines.append("## Source coverage")
+        lines.append("")
+        lines.append(f"- Customers in source: **{total}**")
+        lines.append(
+            f"- Last-test date range: **{min_last.isoformat()} → {max_last.isoformat()}**"
+        )
+        lines.append(
+            f"- Next-due date range: **{min_next.isoformat()} → {max_next.isoformat()}**"
+        )
+        lines.append(f"- With phone: {with_phone}  •  with email: {with_email}")
+        lines.append("")
+        if actionable == 0:
+            lines.append(
+                "> ⚠️ **Nothing actionable this cycle.** Every customer's next retest "
+                "is more than 90 days out. The source file likely covers only a recent "
+                "slice — to find URGENT/HOT retests you'll need an export that includes "
+                "customers last tested ~9–12 months ago. See the 12-month pipeline "
+                "below for the forward look."
+            )
+            lines.append("")
     lines.append("> **Spec:** [`briefs/retest-retention-check.json`](../briefs/retest-retention-check.json)  ")
     lines.append("> **Trigger:** Calendar event _Monthly Retest Retention Check - Run Skill_ (23rd of every month)  ")
     lines.append("> **Trigger phrase:** `Run monthly retest check`")
@@ -258,32 +286,52 @@ def render_markdown(
             )
         lines.append("")
 
-    lines.append("## Suggested email blast (WARM + EARLY)")
-    lines.append("")
-    lines.append("**Subject:** Your CARB Clean Truck Check is coming up — we'll come to you")
-    lines.append("")
-    lines.append("```")
-    lines.append("Hi {{contactName}},")
+    if counts["warm"] + counts["early"] > 0:
+        lines.append("## Suggested email blast (WARM + EARLY)")
+        lines.append("")
+        lines.append("**Subject:** Your CARB Clean Truck Check is coming up — we'll come to you")
+        lines.append("")
+        lines.append("```")
+        lines.append("Hi {{contactName}},")
+        lines.append("")
+        lines.append(
+            "Quick reminder from Bryan at NorCal CARB Mobile — your last Clean Truck "
+            "Check on {{lastTestDate}} for {{vehicleType}} puts your next CARB"
+        )
+        lines.append(
+            "compliance check due around {{nextDueDate}} (~{{daysUntilDue}} days "
+            "out)."
+        )
+        lines.append("")
+        lines.append(
+            "Let's get ahead of it before the State does. Mobile OBD + smoke "
+            "opacity, 30 min per truck, 24/7."
+        )
+        lines.append("")
+        lines.append("Reply with a window that works, or text 916-890-4427.")
+        lines.append("")
+        lines.append("Bryan — NorCal CARB Mobile — 916-890-4427")
+        lines.append("```")
+        lines.append("")
+    lines.append("## 12-month retest pipeline")
     lines.append("")
     lines.append(
-        "Quick reminder from Bryan at NorCal CARB Mobile — your last Clean Truck "
-        "Check on {{lastTestDate}} for {{vehicleType}} puts your next CARB"
-    )
-    lines.append(
-        "compliance check due around {{nextDueDate}} (~{{daysUntilDue}} days "
-        "out)."
+        "Forward-looking view: how many of the current customers will hit each "
+        "monthly check cycle if cadences hold."
     )
     lines.append("")
-    lines.append(
-        "Let's get ahead of it before the State does. Mobile OBD + smoke "
-        "opacity, 30 min per truck, 24/7."
-    )
+    lines.append("| Month | Customers becoming due (within 90 days of that check) |")
+    lines.append("|---|---:|")
+    for month_offset in range(0, 12):
+        check_date = add_months(as_of.replace(day=1), month_offset)
+        count = sum(
+            1
+            for c in customers
+            if 0 <= (c.next_due_date - check_date).days <= 90
+        )
+        lines.append(f"| {check_date:%Y-%m} | {count} |")
     lines.append("")
-    lines.append("Reply with a window that works, or text 916-890-4427.")
-    lines.append("")
-    lines.append("Bryan — NorCal CARB Mobile — 916-890-4427")
-    lines.append("```")
-    lines.append("")
+
     lines.append("## Next steps")
     lines.append("")
     lines.append("1. Create call tasks in Gumption → Cold Calls for every 🔴 URGENT and 🟠 HOT row.")
